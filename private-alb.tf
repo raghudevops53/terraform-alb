@@ -1,6 +1,6 @@
 resource "aws_lb" "private" {
   name                        = "${var.PROJECT_NAME}-${var.ENV}-private-alb"
-  internal                    = false
+  internal                    = true
   load_balancer_type          = "application"
   security_groups             = [aws_security_group.allow-alb-private.id]
   subnets                     = data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNETS
