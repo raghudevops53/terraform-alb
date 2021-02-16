@@ -11,11 +11,11 @@ dev-destroy: ## Terraform Destroy for DEV env
 	@terraform destroy -var-file=env/dev.tfvars -var-file=backend/dev.tfvars -auto-approve -no-color
 
 prod-init: ## Terraform init for PROD env
-	@terraform init -backend-config=backend/dev.tfvars -no-color
+	@terraform init -backend-config=backend/prod.tfvars -no-color
 
 prod-apply: ## Terraform Apply for PROD env
-	@terraform apply -var-file=env/dev.tfvars -auto-approve -no-color
+	@terraform apply -var-file=env/prod.tfvars -auto-approve -no-color
 
 prod-destroy: ## Terraform Destroy for PROD env
-	@terraform destroy -var-file=env/dev.tfvars -auto-approve -no-color
+	@terraform destroy -var-file=env/prod.tfvars -auto-approve -no-color
 
